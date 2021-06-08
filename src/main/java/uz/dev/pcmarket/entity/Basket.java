@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -25,7 +26,8 @@ public class Basket{
 
     private Double totalPrice;
 
-    @ManyToOne
-    private Product product;
+    @OneToMany
+    private List<Product> products;
+
 
 }
