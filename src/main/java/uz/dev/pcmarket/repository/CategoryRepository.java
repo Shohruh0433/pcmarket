@@ -5,5 +5,4 @@ import uz.dev.pcmarket.entity.Category;
 
 public interface CategoryRepository extends JpaRepository<Category,Integer> {
 
-
 }

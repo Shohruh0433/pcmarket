@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 
 
-public class CommandMember extends AbsClass{
+public class Contact extends AbsClass{
 
     private String profession;
 

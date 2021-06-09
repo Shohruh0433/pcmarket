@@ -21,4 +21,6 @@ public class Comment extends AbsClass {
 
     @OneToOne
     private Attachment attachment;
+
+
 }

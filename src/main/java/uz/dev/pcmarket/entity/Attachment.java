@@ -16,7 +16,7 @@ import javax.persistence.Entity;
 
 public class Attachment extends AbsClass {
 
-    private Double size;
+    private Long size;
 
     private String  contentType;
 

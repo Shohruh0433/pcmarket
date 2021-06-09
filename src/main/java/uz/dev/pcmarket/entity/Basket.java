@@ -26,8 +26,8 @@ public class Basket{
 
     private Double totalPrice;
 
-    @OneToMany
-    private List<Product> products;
+    @OneToOne
+    private Product product;
 
 
 }
