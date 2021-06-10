@@ -26,7 +26,6 @@ public class CharacteristicService {
 
     public Characteristic add(CharacteristicDto characteristicDto) {
         Characteristic  characteristic=new Characteristic();
-        characteristic.setValue(characteristicDto.getValue());
         characteristic.setName(characteristicDto.getName());
 
         if (characteristicDto.getCategoryId() != null){
@@ -74,7 +73,6 @@ public class CharacteristicService {
 
         Characteristic characteristic = optionalCharacteristic.get();
         characteristic.setName(characteristicDto.getName());
-        characteristic.setValue(characteristicDto.getValue());
 
         if (characteristicDto.getCategoryId() != null){
             Optional<Category> optionalCategory = categoryRepository.findById(characteristicDto.getCategoryId());
