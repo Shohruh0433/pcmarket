@@ -10,6 +10,7 @@ import uz.dev.pcmarket.entity.Product;
 import uz.dev.pcmarket.projections.ProductProjection;
 
 import java.util.List;
+import java.util.Map;
 
 @RepositoryRestResource(path = "product",collectionResourceRel = "list",excerptProjection = ProductProjection.class)
 public interface ProductRepository  extends JpaRepository<Product,Integer> {
@@ -19,14 +20,11 @@ public interface ProductRepository  extends JpaRepository<Product,Integer> {
 
 
     @RestResource(path = "filter")
-    @Query(value = "select  *from product p\n" +
-            "join category c on c.id = p.category_id\n" +
-            "join property pr on pr.product_id = p.id\n" +
-            "join measurement m on m.id=pr.measurement_id\n" +
-            "join characteristic ch on ch.id = pr.characteristic_id\n" +
-            "where c.name=:category_name and  ch.name=:charName and pr.amount=:amount ",nativeQuery = true)
-    List<Product> findAllByProduct(@Param("category_name") String  category_name ,@Param("charName")
-                                   String charName, @Param("amount")String amount);
+
+    @Query(value = "select * from product p \n" +
+
+            "where p.id   in (select pp.product_id from product_property pp where pp.properties_id in(:list)) ",nativeQuery = true)
+    List<Product> findAllByProduct(@Param("list") List<Integer> list);
 
 
 

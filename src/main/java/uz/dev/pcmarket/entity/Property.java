@@ -26,8 +26,7 @@ public class Property {
     @ManyToOne
     private Measurement measurement;
 
-    @ManyToOne
-    private Product product;
+
 
 
 }

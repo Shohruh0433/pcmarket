@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -32,6 +29,9 @@ public class Product extends AbsClass {
 
     @Column(nullable = false)
     private String warranty;
+
+    @ManyToMany
+    private List<Property> properties;
 
 
 }
