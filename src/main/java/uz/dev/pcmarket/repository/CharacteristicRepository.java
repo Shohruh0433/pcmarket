@@ -8,7 +8,7 @@ import uz.dev.pcmarket.projections.CharacteristicProjection;
 
 import java.util.List;
 
-@RepositoryRestResource(path = "characteristic",collectionResourceRel = "list",excerptProjection = CharacteristicProjection.class)
+    @RepositoryRestResource(path = "characteristic",collectionResourceRel = "list",excerptProjection = CharacteristicProjection.class)
 public interface CharacteristicRepository extends JpaRepository<Characteristic,Integer> {
 
 //    List<Characteristic> findAllById(Iterable<Integer> iterable);

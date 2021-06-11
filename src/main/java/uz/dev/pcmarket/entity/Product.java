@@ -22,10 +22,6 @@ public class Product extends AbsClass {
     @Column(nullable = false)
     private Double price;
 
-    @Column(nullable = false)
-    @OneToMany
-    private List<Characteristic> characteristics;
-
     @OneToMany
     private List<Attachment> attachments;
 

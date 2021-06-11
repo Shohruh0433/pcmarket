@@ -14,10 +14,7 @@ public interface ProductProjection {
     Integer getId();
 
     String getName();
-
     String getPrice();
-
-    List<Characteristic> getCharacteristics();
 
     List<Attachment> getAttachments();
 

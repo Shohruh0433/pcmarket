@@ -17,6 +17,7 @@ import javax.persistence.*;
 public class Category  extends AbsClass{
 
     @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
 
 }
