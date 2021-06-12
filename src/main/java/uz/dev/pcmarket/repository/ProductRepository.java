@@ -21,9 +21,9 @@ public interface ProductRepository  extends JpaRepository<Product,Integer> {
 
     @RestResource(path = "filter")
 
-    @Query(value = "select * from product p \n" +
-
-            "where p.id   in (select pp.product_id from product_property pp where pp.properties_id in(:list)) ",nativeQuery = true)
+    @Query(value = "   select * from product p where p.id in( select ch.product_id " +
+            "from characteristic ch " +
+            "where ch.id in(select pp.character_id from property pp where pp.id in(:list)))\n ",nativeQuery = true)
     List<Product> findAllByProduct(@Param("list") List<Integer> list);
 
 
