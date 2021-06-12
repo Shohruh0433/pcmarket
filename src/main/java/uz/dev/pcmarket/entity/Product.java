@@ -30,8 +30,7 @@ public class Product extends AbsClass {
     @Column(nullable = false)
     private String warranty;
 
-    @ManyToMany
-    private List<Property> properties;
+
 
 
 }

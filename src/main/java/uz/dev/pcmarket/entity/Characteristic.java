@@ -20,7 +20,7 @@ import java.util.List;
 
 public class Characteristic extends AbsClass{
 
-    @ManyToMany
-    private List<Category> category;
+    @ManyToOne
+    private Product product;
 
 }
