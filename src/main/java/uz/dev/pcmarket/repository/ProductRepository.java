@@ -10,7 +10,7 @@ import uz.dev.pcmarket.entity.Product;
 import uz.dev.pcmarket.projections.ProductProjection;
 
 import java.util.List;
-import java.util.Map;
+
 
 @RepositoryRestResource(path = "product",collectionResourceRel = "list",excerptProjection = ProductProjection.class)
 public interface ProductRepository  extends JpaRepository<Product,Integer> {
