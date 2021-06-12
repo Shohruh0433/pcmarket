@@ -13,5 +13,5 @@ import javax.persistence.Entity;
 
 public class Measurement extends AbsClass {
 
-
+    
 }
